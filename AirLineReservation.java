@@ -1,3 +1,10 @@
+/**
+ * lab 5 
+ * jackson johnson
+ * february 1st 2020
+ * 11:39am
+ * github.com/its-jackson/lab5
+ */
 
 public class AirLineReservation {
     private String firstName;
@@ -47,7 +54,8 @@ public class AirLineReservation {
     public int getSeatNumber() {
         return seatNumber;
     }
-
+    
+    // your seat class based off your seatNumber
     public String findSeatClass(int seatNumber) {
         String flightGrade = "";
         
@@ -73,7 +81,8 @@ public class AirLineReservation {
         }
         return flightGrade;
     } 
-
+    
+    // no fly list checker - your name andrea franco = safe lol
     public String noFlyList() {
         String firstAndLast = firstName.toLowerCase() + " " + lastName.toLowerCase();
         String code = "";
