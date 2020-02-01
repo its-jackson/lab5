@@ -111,7 +111,6 @@ public class AirLineReservation {
         return code;
     }
     
-    
     // isolate digit 1 and digit 2 then utilize substring() to find portion of string based off the first and second digit of seatNumber
     public String allObjectState() {
         String allStateVariables = firstName + lastName + flightNumber + seatNumber; // all state concatenated
@@ -122,8 +121,10 @@ public class AirLineReservation {
         int i = Integer.parseInt(y);  // convert first digit of seatNumber to int
         int w = Integer.parseInt(z); // convert second digit of seatNumber to int
         
-        if (z.length() < allStateVariables.length()) {
-            portionOfString = allStateVariables.substring(i, w);
+        if (w < allStateVariables.length()) { // if last digit is less then length of allstatevariables
+            if(i < w) { // if the first digit is less than the second digit
+            portionOfString = allStateVariables.substring(i, w); // return the portion of the string based off the first and last digits of seatNumber e.g 19 = 1, 9 = ndreafra
+            }
         }
         
         return portionOfString;   
