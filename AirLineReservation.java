@@ -82,7 +82,7 @@ public class AirLineReservation {
         return flightGrade;
     } 
     
-    // no fly list checker - your name andrea franco = safe lol
+    // no fly list checker - your name is the following you are not allowed to fly
     public String noFlyList() {
         String firstAndLast = firstName.toLowerCase() + " " + lastName.toLowerCase();
         String code = "";
@@ -112,18 +112,19 @@ public class AirLineReservation {
     }
     
     // isolate digit 1 and digit 2 then utilize substring() to find portion of string based off the first and second digit of seatNumber
+    // x = int seatNumber converted to type String
     public String allObjectState() {
         String allStateVariables = firstName + lastName + flightNumber + seatNumber; // all state concatenated
         String portionOfString = ""; // portion of string to be printed on screen
         String x = Integer.toString(seatNumber); // convert int seatNumber to String type
-        String y = x.substring(0, 1); // isolate first digit of seatNumber
-        String z = x.substring(1, 2); // isolate second digit of seatNumber
-        int i = Integer.parseInt(y);  // convert first digit of seatNumber to int
-        int w = Integer.parseInt(z); // convert second digit of seatNumber to int
+        String firstDigitString = x.substring(0, 1); // isolate first digit of seatNumber 
+        String secondDigitString = x.substring(1, 2); // isolate second digit of seatNumber
+        int firstDigit = Integer.parseInt(firstDigitString);  // convert first digit of seatNumber to int
+        int secondDigit = Integer.parseInt(secondDigitString); // convert second digit of seatNumber to int
         
-        if (w < allStateVariables.length()) { // if last digit is less then length of allstatevariables
-            if(i < w) { // if the first digit is less than the second digit
-            portionOfString = allStateVariables.substring(i, w); // return the portion of the string based off the first and last digits of seatNumber e.g 19 = 1, 9 = ndreafra
+        if (secondDigit < allStateVariables.length()) { // if last digit is less then length of allstatevariables
+            if(firstDigit < secondDigit) { // if the first digit is less than the second digit
+            portionOfString = allStateVariables.substring(firstDigit, secondDigit); // return the portion of the string based off the first and last digits of seatNumber e.g 19 = 1, 9 = ndreafra
             }
         }
         
