@@ -86,36 +86,24 @@ public class AirlineMain {
 
         String noFlyName1 = "Jack Blue";
         if(firstAndLast.equals(noFlyName1.toLowerCase())) {
-            System.out.println("Code " + blackCode);
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
+            System.out.println("CODE " + blackCode);
+            for (int i = 0; i < 7; i++) {
+                System.out.println("ALERT");
+            }
         }
         String noFlyName2 = "Jack Green";
         if (firstAndLast.equals(noFlyName2.toLowerCase())) {
-            System.out.println("Code " + blackCode);
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
+            System.out.println("CODE " + blackCode);
+            for (int i = 0; i < 7; i++) {
+                System.out.println("ALERT");
+            }
         }
         String noFlyName3 = "Jill White";
         if (firstAndLast.equals(noFlyName3.toLowerCase())) {
-            System.out.println("Code " + blackCode);
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
-            System.out.println("ALERT");
+            System.out.println("CODE " + blackCode);
+            for (int i = 0; i < 7; i++) {
+                System.out.println("ALERT");
+            }
         }
 
     }
