@@ -117,8 +117,8 @@ public class AirLineReservation {
         String allStateVariables = firstName + lastName + flightNumber + seatNumber; // all state concatenated
         String portionOfString = ""; // portion of string to be printed on screen
         String x = Integer.toString(seatNumber); // convert int seatNumber to String type
-        String y = x.substring(0, 1); // find first digit of seatNumber
-        String z = x.substring(1, 2); // find second digit of seatNumber
+        String y = x.substring(0, 1); // isolate first digit of seatNumber
+        String z = x.substring(1, 2); // isolate second digit of seatNumber
         int i = Integer.parseInt(y);  // convert first digit of seatNumber to int
         int w = Integer.parseInt(z); // convert second digit of seatNumber to int
         
