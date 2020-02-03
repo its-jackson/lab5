@@ -4,7 +4,12 @@
  * february 1st 2020
  * 11:39am
  * github.com/its-jackson/lab5
+ * javadocs dialog frame https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
+ * javadocs arrays https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html#asList(T...)
  */
+
+import javax.swing.*;
+import java.util.Arrays;
 
 public class AirLineReservation {
     private String firstName;
@@ -76,7 +81,7 @@ public class AirLineReservation {
                     break;
             case 8: flightGrade = "Fourth Class";
                     break;
-            default: flightGrade = "Eco Class";
+            default: flightGrade = "Economy Class";
                     break;
         }
         return flightGrade;
@@ -86,28 +91,17 @@ public class AirLineReservation {
     public String noFlyList() {
         String firstAndLast = firstName.toLowerCase() + " " + lastName.toLowerCase();
         String code = "";
+        String[] noFlyNames = {"jack blue", "jack green", "jill white"}; // array list contains no fly names
+        JOptionPane frame = new JOptionPane(); // instantiate JOptionPane from swing class
+        
+        if(Arrays.asList(noFlyNames).contains(firstAndLast)) { // does the array contain the string firstname + lastName
+            code = "9999";
+            for (int i = 0; i < 7; i++) {
+                JOptionPane.showMessageDialog(frame, "ALERT", "CODE 9999", frame.WARNING_MESSAGE); // set dialog message to "ALERT" - title is "CODE 9999" - give frame WARNING
+                System.out.println("ALERT");
+            }
+        }
 
-        String noFlyName1 = "Jack Blue";
-        if(firstAndLast.equals(noFlyName1.toLowerCase())) {
-            code = "9999";
-            for (int i = 0; i < 7; i++) {
-                System.out.println("ALERT");
-            }
-        }
-        String noFlyName2 = "Jack Green";
-        if (firstAndLast.equals(noFlyName2.toLowerCase())) {
-            code = "9999";
-            for (int i = 0; i < 7; i++) {
-                System.out.println("ALERT");
-            }
-        }
-        String noFlyName3 = "Jill White";
-        if (firstAndLast.equals(noFlyName3.toLowerCase())) {
-            code = "9999";
-            for (int i = 0; i < 7; i++) {
-                System.out.println("ALERT");
-            }
-        }
         return code;
     }
     
@@ -118,13 +112,19 @@ public class AirLineReservation {
         String portionOfString = ""; // portion of string to be printed on screen
         String x = Integer.toString(seatNumber); // convert int seatNumber to String type
         String firstDigitString = x.substring(0, 1); // isolate first digit of seatNumber 
-        String secondDigitString = x.substring(1, 2); // isolate second digit of seatNumber
+        String secondDigitString; // isolate second digit of seatNumber
         int firstDigit = Integer.parseInt(firstDigitString);  // convert first digit of seatNumber to int
-        int secondDigit = Integer.parseInt(secondDigitString); // convert second digit of seatNumber to int
+         
         
-        if (secondDigit < allStateVariables.length()) { // if last digit is less then length of allstatevariables
-            if(firstDigit < secondDigit) { // if the first digit is less than the second digit
-            portionOfString = allStateVariables.substring(firstDigit, secondDigit); // return the portion of the string based off the first and last digits of seatNumber e.g 19 = 1, 9 = ndreafra
+        if(seatNumber <= 9 || seatNumber >= 100) { // check if seatnumber is two digits if not do not return portion of string
+            portionOfString = "MUST BE 2 DIGIT NUMBER";
+        } else if (seatNumber >= 10 && seatNumber <= 99) { // checks if seat number is 2 digit number
+            secondDigitString = x.substring(1, 2); // if seatnumber is 2 digit number isolate the second digit
+            int secondDigit = Integer.parseInt(secondDigitString); // then convert back to int type to find the portion of string based off the second number
+                if (secondDigit < allStateVariables.length()) { // if second digit is less then length of allstatevariables
+                    if(firstDigit < secondDigit) { //  AND if the first digit is less than the second digit
+                        portionOfString = allStateVariables.substring(firstDigit, secondDigit); // return the portion of the string based off the first and last digits of seatNumber e.g 19 = 1, 9 = ndreafra
+                    }
             }
         }
         
