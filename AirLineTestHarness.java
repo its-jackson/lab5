@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
+
 public class AirLineTestHarness {
     public static void main(String [] args) {
         // objects instantiated from class AirlineMain and Scanner
-        AirLineReservation airLineObj = new AirLineReservation("Jack", "Blue", 3099, 29);
+        AirLineReservation airLineObj = new AirLineReservation("Jack", "Blue", 3099, 4);
         AirLineReservation airLineObj2 = new AirLineReservation();
         Scanner in = new Scanner(System.in);
         //
