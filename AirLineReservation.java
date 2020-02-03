@@ -87,7 +87,7 @@ public class AirLineReservation {
         return flightGrade;
     } 
     
-    // no fly list checker - your name is the following you are not allowed to fly
+    // no fly list checker - if your first name & last name = jack blue or jack green or jill white, case does not matter.
     public String noFlyList() {
         String firstAndLast = firstName.toLowerCase() + " " + lastName.toLowerCase();
         String code = "";
